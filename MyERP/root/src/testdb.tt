@@ -1,0 +1,4 @@
+test
+[% FOREACH result IN results %]
+    <p>ID: [% result.testcolumn %]</p>
+[% END %]

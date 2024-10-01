@@ -1,0 +1,44 @@
+ERP
+
+pjcatsd == erpserver 
+
+sudo cpanm --notest DBD::mysql --configure-args="--mysql_config=/opt/homebrew/opt/mysql/bin/mysql_config"
+
+
+thomasrio@Thomas-Macbook MyERP % sudo cpanm --notest DBD::mysql --configure-args="--mysql_config=/opt/homebrew/opt/mysql/bin/mysql_config"
+--> Working on DBD::mysql
+Fetching http://www.cpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.009.tar.gz ... OK
+Configuring DBD-mysql-5.009 ... N/A
+! Configure failed for DBD-mysql-5.009. See /Users/thomasrio/.cpanm/work/1727589718.98060/build.log for details.
+thomasrio@Thomas-Macbook MyERP %
+
+
+
+Run script/myerp_server.pl to test the application.
+
+http://localhost:3000/ not what it tells you (http://0:3000/)
+
+thomasrio@Thomas-Macbook myErp % lsof -i :3000
+COMMAND    PID      USER   FD   TYPE             DEVICE SIZE/OFF NODE NAME
+perl5.30 93796 thomasrio    3u  IPv4 0xc2ad9c012482ee63      0t0  TCP *:hbci (LISTEN)
+thomasrio@Thomas-Macbook MyERP % kill 93796
+thomasrio@Thomas-Macbook MyERP %
+[2]  + terminated  script/myerp_server.pl
+thomasrio@Thomas-Macbook MyERP %
+
+
+
+** Maria DB **
+
+root zlqBDhUTgwGl
+
+
+** DB **
+database: myerp
+
+root password in 1pass
+
+mysql> CREATE USER 'thomas'@'localhost' IDENTIFIED BY 'Seagull221@';
+
+user: thomas
+pass: Seagull221@
